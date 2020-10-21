@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+        <ion-back-button
+        [text]="buttonText"
+        [icon]="buttonIcon">
+    </ion-back-button>   
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Minhas Listas
+    </ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+      <ion-item  (click)="get(item.key)" *ngFor="let item of tarefas"  >
+       <ion-avatar  class="tab2" item=start (click)="get(item.key)">
+          <img class="avatar" src="/assets/img/listag.png">
+       </ion-avatar>
+       <ion-label text-wrap padding>
+         <h2 >{{item.tarefa.titulo}}</h2>
+          <small>{{item.tarefa.datas}}</small>
+         
+          </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="add()" color="success">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-content>
+  <ion-footer padding>
+      <ion-toolbar>
+          <small> Anotações | Copyright {{ year }}  © | By View</small>
+        </ion-toolbar>
+    </ion-footer>

@@ -1,0 +1,62 @@
+
+<ion-header>
+  <ion-toolbar color="success">
+
+      <ion-buttons slot="start">
+          <ion-back-button
+          [text]="buttonText"
+          [icon]="buttonIcon">
+      </ion-back-button>   
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>
+        Adicionar item
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+<ion-list>
+    
+    <ion-input type="hidden" value="{{id }}" name="keyI" [(ngModel)]="keyI"></ion-input>
+    <ion-input type="hidden" value="2" name="type" [(ngModel)]="type"></ion-input>
+    
+  <ion-item>
+    <ion-label stacked>Nome:</ion-label>
+    <ion-input type="text" name="tituloI" [(ngModel)]="model.tituloI"></ion-input>
+  </ion-item>
+
+</ion-list>
+
+<ion-button color="success" expand="full" block (click)="save()">Salvar</ion-button>
+
+
+
+
+
+<ion-list>
+  <h2>Cadastrados anteriormente</h2>
+    <ion-item  *ngFor="let item of itemsall"  >
+     <ion-avatar  class="tab2" item=start>
+      <img class="avatar" src="/assets/img/item.png">
+
+      
+     </ion-avatar>
+     <ion-label text-wrap padding>
+       <h2 >{{item.item.tituloI}}</h2>
+        <div class="ion-text-start">
+          <ion-button  color="danger"   block (click)="removeTarefa(item);">
+            <ion-icon name="trash"></ion-icon>
+           Excluir
+         </ion-button>
+      </div>
+        </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer padding>
+    <ion-toolbar>
+        <small> Anotações | Copyright {{ year }} © | By View</small>
+      </ion-toolbar>
+  </ion-footer>

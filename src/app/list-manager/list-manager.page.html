@@ -1,0 +1,58 @@
+
+<ion-header>
+  <ion-toolbar color="success">
+      <ion-buttons slot="start">
+          <ion-back-button
+          [text]="buttonText"
+          [icon]="buttonIcon">
+      </ion-back-button>   
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>
+        Nova Lista
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+<ion-list>
+    
+    <ion-input type="hidden" value="{{id }}" name="key" [(ngModel)]="key"></ion-input>
+    <ion-input type="hidden" value="1" name="type" [(ngModel)]="type"></ion-input>
+
+  <ion-item>
+    <ion-label stacked>Nome:</ion-label>
+    <ion-input type="text" name="titulo" [(ngModel)]="model.titulo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Data:</ion-label>
+    <ion-datetime  name="datas" displayFormat="DD/MM/YYYY" [(ngModel)]="model.datas" placeholder="Selecionar data"></ion-datetime>
+    <!--<ion-input type="text" name="datas"  [(ngModel)]="model.datas"></ion-input>-->
+  </ion-item>
+  
+    <h2>Itens</h2>
+    <ion-item *ngFor="let item of itemsall">
+  
+      <ion-label>  {{item.item.tituloI}}</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="item.item.isChecked" (ionChange)="verifyEvent(item.item.keyI)" value="{{item.item.keyI}}">
+      </ion-checkbox>
+    </ion-item>
+  
+
+
+</ion-list>
+
+<ion-button color="success" expand="full" block (click)="save()">Salvar</ion-button>
+
+
+
+
+
+</ion-content>
+<ion-footer padding>
+    <ion-toolbar>
+        <small> Anotações | Copyright {{ year }} © | By View</small>
+      </ion-toolbar>
+  </ion-footer>

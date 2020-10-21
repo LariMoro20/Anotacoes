@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="success">
+          <ion-buttons slot="start">
+          <ion-button style='color:white;' expand="full" (click)="closeModal()">X</ion-button> 
+                        </ion-buttons>
+    <ion-title>Entre em contato conosco!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <p>Quais suas sugestões, dúvidas e críticas para melhorar nossa aplicação?</p>
+  <ion-list>
+      <ion-item>
+        <ion-label stacked>Nome:</ion-label>
+        <ion-input type="text" name="titulo"  [(ngModel)]="model.nome"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label stacked>Email:</ion-label>
+        <ion-input type="text" name="email"  [(ngModel)]="model.email"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Mensagem:</ion-label>
+        <ion-textarea rows="3" name="descricao" [(ngModel)]="model.descricao"></ion-textarea>
+      </ion-item>
+    
+    </ion-list>
+    
+    <ion-button  color="success" expand="full"  block (click)="enviar()">Enviar</ion-button>
+</ion-content>
+<ion-footer padding>
+    <ion-toolbar>
+        <small> Anotações | Copyright {{ year }} © | By View</small>
+      </ion-toolbar>
+  </ion-footer>

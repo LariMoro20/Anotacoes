@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="success">
+          <ion-buttons slot="start">
+          <ion-button style='color:white;' expand="full" (click)="closeModal()">X</ion-button> 
+                        </ion-buttons>
+    <ion-title>Sobre nós</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-card>
+        <img src="/assets/img/logo.png" alt="" />
+
+        <ion-card-header>
+          <ion-card-subtitle>Quem somos</ion-card-subtitle>
+          <ion-card-title>Equipe</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <p>Somos uma dupla de trabalho composta por uma Social Media e uma Desenvolvedora Web. <br> O nosso objetivo é de 
+            colocarmos em prática nossos conhecimentos em projetos e crescer profissionalmente.</p>
+            <p><b>Social Media:</b> Vitoria Azevedo</p>
+            <p><b>Desenvolvedora Web:</b> Larissa Moro</p>
+          
+        </ion-card-content>
+      </ion-card>
+</ion-content>
+<ion-footer padding>
+    <ion-toolbar>
+      <small> Anotações | Copyright {{ year }} © | By View</small>
+    </ion-toolbar>
+  </ion-footer>

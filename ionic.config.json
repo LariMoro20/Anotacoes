@@ -1,0 +1,7 @@
+{
+  "name": "Anotacoes",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

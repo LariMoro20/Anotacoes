@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button
+          [text]="buttonText"
+          [icon]="buttonIcon">
+      </ion-back-button>    
+                          </ion-buttons>
+
+
+      <ion-title>Minha Lista</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card class="welcome-card"  *ngFor="let item of tarefa" >
+        <ion-card-header>
+          <ion-card-subtitle>{{item.tarefa.datas}}</ion-card-subtitle>
+          <ion-card-title>{{item.tarefa.titulo}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+<h3>Comprar:</h3>
+<ul>
+  <li *ngFor="let lista of listItem">{{lista.item.tituloI}}</li>
+  </ul>
+
+          
+        
+        
+
+        
+         
+          <ion-button  color="success" expand="full"  block (click)="edit(item);">
+            <ion-icon name="create"></ion-icon>
+            Editar
+         </ion-button>
+         <ion-button  color="danger" expand="full"  block (click)="removeTarefa(item);">
+          <ion-icon name="trash"></ion-icon>
+         Excluir
+       </ion-button>
+        </ion-card-content>
+      </ion-card>
+</ion-content>
+<ion-footer padding>
+    <ion-toolbar>
+        <small> Anotações | Copyright {{ year }} © | By View</small>
+      </ion-toolbar>
+  </ion-footer>

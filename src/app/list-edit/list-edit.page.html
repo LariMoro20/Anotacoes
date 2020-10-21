@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="success">
+        <ion-buttons slot="start">
+          <ion-back-button
+          [text]="buttonText"
+          [icon]="buttonIcon">
+      </ion-back-button>   
+                          </ion-buttons>
+  
+  
+      <ion-title>Editar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content  padding>
+    
+  <ion-list  *ngFor="let item of tarefa" >
+
+      <ion-input type="hidden"  name="key" [(ngModel)]="key"></ion-input>
+      <ion-input type="hidden"  name="type" [(ngModel)]="type"></ion-input>
+
+    <ion-item>
+      
+      <ion-label stacked>Nome:</ion-label>
+      <ion-input type="text" name="titulo"  [(ngModel)]="model.titulo"></ion-input>
+    </ion-item>
+  
+  
+    <ion-item>
+      <ion-label stacked>Data:</ion-label>
+      <ion-datetime  name="datas" displayFormat="DD/MM/YYYY" [(ngModel)]="model.datas" placeholder="Selecionar Data"></ion-datetime>
+    </ion-item>
+    
+    <h2>Itens</h2>
+    <ion-item *ngFor="let iten of itemsall">
+    
+      <ion-label>{{iten.item.tituloI}}</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="iten.isChecked" (ionChange)="verifyEvent(iten.keyI)" value="{{iten.keyI}}">
+      </ion-checkbox>
+    </ion-item>
+  
+  </ion-list>
+  
+  <ion-button  color="success" expand="full"  block (click)="save()">Salvar</ion-button>
+  
+  
+  
+  
+  
+  <ion-list>
+    <h3>Editando:</h3>    <ion-item  *ngFor="let item of tarefa"  >
+       <ion-avatar  class="tab2" item=start>
+          <img class="avatar" src="/assets/img/listag.png">
+       </ion-avatar>
+       <ion-label text-wrap padding>
+         <h2 >{{item.tarefa.titulo}}</h2>
+          <small>{{item.tarefa.datas}}</small>
+          </ion-label>
+      </ion-item>
+    </ion-list>
+  
+  
+  </ion-content>
+  <ion-footer padding>
+      <ion-toolbar >
+          <small> Anotações | Copyright {{ year }} © | By View</small>
+        </ion-toolbar>
+    </ion-footer>

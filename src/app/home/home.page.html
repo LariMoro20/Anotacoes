@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+      <img src="/assets/img/lista.png" alt="" />
+      <ion-card-header>
+        <ion-card-subtitle>Bem vindo!</ion-card-subtitle>
+        <ion-card-title>Lista de compras</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Este é seu aplicativo pessoal de criar listas!</p>
+        <p>Obrigado por sua colaboração, estamos crescendo e logo traremos novidades.</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-list lines="none">
+    
+      <ion-item (click)="showModalAbout()">
+        <ion-icon slot="start" color="medium" name="book"></ion-icon>
+        <ion-label>Quem somos</ion-label>
+      </ion-item>
+      <ion-item (click)="showModalContact()">
+          <ion-icon slot="start" color="medium" name="call"></ion-icon>
+          <ion-label>Contato</ion-label>
+        </ion-item>
+    </ion-list>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      
+      <ion-fab-button  (click)="add()"  color="success">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>
+<ion-footer padding>
+    <ion-toolbar>
+        <small> Anotações | Copyright {{ year }} © | By View</small>
+      </ion-toolbar>
+  </ion-footer>
